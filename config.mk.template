@@ -1,0 +1,5 @@
+# Configuration file
+
+# hostname or IP of radio thermostat
+TSTAT='wifi-thermostat.local'
+
