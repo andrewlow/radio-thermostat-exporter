@@ -1,11 +1,21 @@
 #
 # radio-thermostat-exporter
 #
-FROM python:slim
-WORKDIR work
-RUN useradd -ms /bin/bash thermostat
-USER thermostat
-COPY radio-thermostat-exporter.py .
-RUN pip install tornado radiotherm
-	
-CMD [ "python", "/work/radio-thermostat-exporter.py" ]
+
+# Multi-stage dockerfile
+
+#
+# First we build the project statically
+FROM ekidd/rust-musl-builder as builder
+
+WORKDIR /home/rust/
+
+COPY . .
+RUN cargo build --release
+
+#
+# Now we create the runtime container
+FROM scratch
+
+COPY --from=builder /home/rust/target/x86_64-unknown-linux-musl/release/radio-thermostat-exporter .
+ENTRYPOINT [ "./radio-thermostat-exporter" ]

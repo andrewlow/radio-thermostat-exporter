@@ -13,6 +13,7 @@ build:
 	docker create \
 		--name=$(NAME) \
 		-e TSTAT=$(TSTAT) \
+		-u 1000:1000 \
 		-p 9864:9864 \
 		--restart=unless-stopped \
 		$(NAME)

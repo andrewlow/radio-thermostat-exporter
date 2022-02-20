@@ -15,14 +15,15 @@ To pull the latest git changes and rebuild your image
 
 ## Port
 
-The exporter is on `localhost:9864/metrics`
+The exporter is on `localhost:9864/metrics` - but the code is permissive and will answer any web request with the metric payload.
 
-## Dependencies
+## References
 
-No work required, but useful if you want to understand things without reading the code.
+Written in Rust as a learning exercise.
 
-- dockerhub `python:slim`
-- python libraries: tornado, radiotherm
+- https://doc.rust-lang.org/book/ch20-01-single-threaded.html
+- https://rust-lang-nursery.github.io/rust-cookbook/web/clients/requests.html
+- https://blog.sedrik.se/posts/my-docker-setup-for-rust/
 
 ## [MIT License](LICENSE)
 

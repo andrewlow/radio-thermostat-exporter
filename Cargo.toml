@@ -1,0 +1,12 @@
+[package]
+name = "radio-thermostat-exporter"
+version = "0.1.0"
+edition = "2021"
+repository = "https://github.com/andrewlow/radio-thermostat-exporter"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+error-chain = "0.12.4"
+reqwest = { version = "0.11.9", features = ["blocking"] }
+json = "0.12.4"
