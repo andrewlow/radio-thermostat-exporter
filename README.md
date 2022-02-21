@@ -19,7 +19,7 @@ The exporter is on `localhost:9864/metrics` - but the code is permissive and wil
 
 ## References
 
-Written in Rust as a learning exercise.
+Written in Rust as a learning exercise. [My blog post](https://lowtek.ca/roo/2022/learning-rust-by-rewriting-a-prometheus-exporter/)
 
 - https://doc.rust-lang.org/book/ch20-01-single-threaded.html
 - https://rust-lang-nursery.github.io/rust-cookbook/web/clients/requests.html
