@@ -48,7 +48,11 @@ fn handle_connection(mut stream: TcpStream) {
     let mut buffer = [0; 1024];
     stream.read(&mut buffer).unwrap();
 
-    let contents = read_thermostat().unwrap();
+    let result = read_thermostat();
+    let contents = match result {
+        Ok(result) => result,
+        Err(_err) => "".to_string()
+    };
 
     let response = format!(
         "HTTP/1.1 200 OK\r\nContent-Length: {}\r\n\r\n{}",
