@@ -1,6 +1,8 @@
 # radio-thermostat-exporter
 Prometheus exporter for CT30, CT80, and the Filtrete 3M50
 
+**Status** Probably working, but I've since moved to using an Ecobee. Leaving this here as a useful reference.
+
 ## Getting started
 
 I've used a Makefile based approach. Read my [blog](https://lowtek.ca/roo/2021/managing-docker-containers-with-makefiles/) for details.
